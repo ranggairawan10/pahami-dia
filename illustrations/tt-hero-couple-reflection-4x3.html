@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teman Tumbuh — Hero Illustration</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    background: #FFFBF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+  }
+  svg { width: 100%; height: auto; display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+<defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%"   stop-color="#FFFBF2"/>
+    <stop offset="55%"  stop-color="#FAF3E2"/>
+    <stop offset="100%" stop-color="#EDE2CB"/>
+  </linearGradient>
+
+  <!-- ===== CENTRAL GLOW ===== -->
+  <radialGradient id="cGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%"   stop-color="#FFF8DC" stop-opacity="1"/>
+    <stop offset="25%"  stop-color="#FAEDB8" stop-opacity="0.75"/>
+    <stop offset="55%"  stop-color="#D6A84F" stop-opacity="0.20"/>
+    <stop offset="80%"  stop-color="#CCFBF1" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#FFFBF2" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- ===== FIGURE GRADIENTS ===== -->
+  <linearGradient id="mBodyGrad" x1="0.15" y1="0" x2="0.85" y2="1">
+    <stop offset="0%"   stop-color="#1D9088"/>
+    <stop offset="100%" stop-color="#0A5C58"/>
+  </linearGradient>
+
+  <linearGradient id="mSeatGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#0D6B64"/>
+    <stop offset="100%" stop-color="#094E4A"/>
+  </linearGradient>
+
+  <linearGradient id="fBodyGrad" x1="0.15" y1="0" x2="0.85" y2="1">
+    <stop offset="0%"   stop-color="#0F766E"/>
+    <stop offset="100%" stop-color="#074E49"/>
+  </linearGradient>
+
+  <linearGradient id="hijabGrad" x1="0.1" y1="0" x2="0.9" y2="1">
+    <stop offset="0%"   stop-color="#139188"/>
+    <stop offset="100%" stop-color="#0A6560"/>
+  </linearGradient>
+
+  <linearGradient id="hijabInner" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#0C706A"/>
+    <stop offset="100%" stop-color="#074E49"/>
+  </linearGradient>
+
+  <linearGradient id="skinGrad" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%"   stop-color="#DDA070"/>
+    <stop offset="100%" stop-color="#C47858"/>
+  </linearGradient>
+
+  <linearGradient id="skinLight" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%"   stop-color="#E8AE85"/>
+    <stop offset="100%" stop-color="#D08C68"/>
+  </linearGradient>
+
+  <!-- ===== PHONE GRADIENTS ===== -->
+  <linearGradient id="phoneBody" x1="0.2" y1="0" x2="0.8" y2="1">
+    <stop offset="0%"   stop-color="#242E38"/>
+    <stop offset="100%" stop-color="#131A22"/>
+  </linearGradient>
+
+  <linearGradient id="screenGrad" x1="0" y1="0" x2="0.3" y2="1">
+    <stop offset="0%"   stop-color="#E2FDF8"/>
+    <stop offset="100%" stop-color="#9EEED8"/>
+  </linearGradient>
+
+  <radialGradient id="screenGlow" cx="45%" cy="35%" r="65%">
+    <stop offset="0%"   stop-color="#CCFBF1" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#0F766E" stop-opacity="0"/>
+  </radialGradient>
+
+  <radialGradient id="phoneAura" cx="50%" cy="50%" r="50%">
+    <stop offset="0%"   stop-color="#CCFBF1" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#CCFBF1" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- ===== SEAT SHADOW ===== -->
+  <radialGradient id="seatShadow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%"   stop-color="#0F766E" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#0F766E" stop-opacity="0"/>
+  </radialGradient>
+
+  <!-- ===== CUSHION ===== -->
+  <radialGradient id="cushionGrad" cx="40%" cy="30%" r="70%">
+    <stop offset="0%"   stop-color="#EDD9B8"/>
+    <stop offset="100%" stop-color="#D8C09A"/>
+  </radialGradient>
+
+  <!-- ===== VIGNETTE ===== -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="0%"   stop-color="#FFFBF2" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#DDD0B0" stop-opacity="0.09"/>
+  </radialGradient>
+
+  <!-- ===== FILTERS ===== -->
+
+  <!-- Soft drop shadow for figures -->
+  <filter id="figShadow" x="-25%" y="-20%" width="150%" height="150%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+    <feOffset in="blur" dx="0" dy="7" result="offset"/>
+    <feFlood flood-color="#17202A" flood-opacity="0.11" result="fc"/>
+    <feComposite in="fc" in2="offset" operator="in" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <!-- Soft glow for central light & phone auras -->
+  <filter id="fGlow" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="22" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <!-- Small glow for phone screen -->
+  <filter id="screenBloom" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <!-- Paper grain texture -->
+  <filter id="fGrain" x="0%" y="0%" width="100%" height="100%"
+          color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4"
+                  stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0" result="gn"/>
+    <feBlend in="SourceGraphic" in2="gn" mode="multiply" result="blended"/>
+    <feComposite in="blended" in2="SourceGraphic" operator="in"/>
+  </filter>
+
+</defs>
+
+<!-- ████████████████████████████████████████████
+     LAYER 1: BACKGROUND BASE
+     ████████████████████████████████████████████ -->
+
+<rect width="1200" height="900" fill="url(#bgGrad)"/>
+
+<!-- Large ambient backdrop circles (very subtle, depth layer) -->
+<circle cx="130"  cy="80"  r="240" fill="#CCFBF1" opacity="0.09"/>
+<circle cx="1070" cy="110" r="190" fill="#D6A84F"  opacity="0.06"/>
+<circle cx="600"  cy="970" r="420" fill="#CCFBF1" opacity="0.08"/>
+<circle cx="78"   cy="780" r="130" fill="#D6A84F"  opacity="0.05"/>
+<circle cx="1122" cy="820" r="110" fill="#CCFBF1" opacity="0.07"/>
+<circle cx="580"  cy="200" r="160" fill="#D6A84F"  opacity="0.04"/>
+
+<!-- Soft floor gradient arc at bottom -->
+<path d="M0 780 Q300 720 600 745 Q900 770 1200 720 L1200 900 L0 900 Z"
+      fill="#CCFBF1" opacity="0.05"/>
+<path d="M0 840 Q300 800 600 812 Q900 824 1200 790 L1200 900 L0 900 Z"
+      fill="#D6A84F" opacity="0.03"/>
+
+<!-- ████████████████████████████████████████████
+     LAYER 2: CENTRAL WARM LIGHT
+     ████████████████████████████████████████████ -->
+
+<!-- Outer radial warm glow -->
+<ellipse cx="600" cy="455" rx="360" ry="290" fill="url(#cGlow)" filter="url(#fGlow)"/>
+
+<!-- Concentric warm rings at center -->
+<circle cx="600" cy="450" r="100" fill="#FFF9E0" opacity="0.20"/>
+<circle cx="600" cy="450" r="65"  fill="#FFF6D0" opacity="0.28"/>
+<circle cx="600" cy="450" r="38"  fill="#FFF3BE" opacity="0.35"/>
+<circle cx="600" cy="450" r="18"  fill="#FFEEA0" opacity="0.38"/>
+
+<!-- Radiating spokes (very faint, warm gold) -->
+<g opacity="0.065" stroke="#D6A84F" stroke-width="1.2" fill="none">
+  <line x1="600" y1="450" x2="466" y2="348"/>
+  <line x1="600" y1="450" x2="734" y2="348"/>
+  <line x1="600" y1="450" x2="430" y2="450"/>
+  <line x1="600" y1="450" x2="770" y2="450"/>
+  <line x1="600" y1="450" x2="480" y2="555"/>
+  <line x1="600" y1="450" x2="720" y2="555"/>
+  <line x1="600" y1="450" x2="600" y2="320"/>
+</g>
+
+<!-- Minimal heart form at exact center — barely visible, intentionally whisper-quiet -->
+<path d="M600 464
+         Q595.5 457 593 451
+         Q590 443 596.5 441
+         Q600 440 600 444.5
+         Q600 440 603.5 441
+         Q610 443 607 451
+         Q604.5 457 600 464 Z"
+      fill="#0F766E" opacity="0.17"/>
+
+<!-- Dotted connection lines from phones toward the central light (behind figures) -->
+<line x1="334" y1="598" x2="574" y2="453"
+      stroke="#D6A84F" stroke-width="1.3" stroke-dasharray="5,10" opacity="0.13"/>
+<line x1="866" y1="598" x2="626" y2="453"
+      stroke="#D6A84F" stroke-width="1.3" stroke-dasharray="5,10" opacity="0.13"/>
+
+<!-- ████████████████████████████████████████████
+     LAYER 3: DECORATIVE DOTS & SHAPES
+     ████████████████████████████████████████████ -->
+
+<!-- Left field dots -->
+<circle cx="90"  cy="308" r="5.5" fill="#D6A84F" opacity="0.32"/>
+<circle cx="65"  cy="392" r="3.5" fill="#CCFBF1" opacity="0.48"/>
+<circle cx="108" cy="468" r="4.2" fill="#0F766E" opacity="0.15"/>
+<circle cx="78"  cy="548" r="3.0" fill="#D6A84F" opacity="0.22"/>
+<circle cx="128" cy="245" r="4.5" fill="#D6A84F" opacity="0.18"/>
+<circle cx="166" cy="190" r="3.2" fill="#CCFBF1" opacity="0.35"/>
+<circle cx="388" cy="162" r="7.0" fill="#D6A84F" opacity="0.09"/>
+<circle cx="432" cy="120" r="4.5" fill="#0F766E" opacity="0.08"/>
+<circle cx="152" cy="695" r="4.0" fill="#D6A84F" opacity="0.14"/>
+<circle cx="105" cy="650" r="3.0" fill="#CCFBF1" opacity="0.20"/>
+
+<!-- Right field dots -->
+<circle cx="1110" cy="308" r="5.5" fill="#D6A84F" opacity="0.32"/>
+<circle cx="1135" cy="392" r="3.5" fill="#CCFBF1" opacity="0.48"/>
+<circle cx="1092" cy="468" r="4.2" fill="#0F766E" opacity="0.15"/>
+<circle cx="1122" cy="548" r="3.0" fill="#D6A84F" opacity="0.22"/>
+<circle cx="1072" cy="245" r="4.5" fill="#D6A84F" opacity="0.18"/>
+<circle cx="1034" cy="190" r="3.2" fill="#CCFBF1" opacity="0.35"/>
+<circle cx="812"  cy="162" r="7.0" fill="#D6A84F" opacity="0.09"/>
+<circle cx="768"  cy="120" r="4.5" fill="#0F766E" opacity="0.08"/>
+<circle cx="1048" cy="695" r="4.0" fill="#D6A84F" opacity="0.14"/>
+<circle cx="1095" cy="650" r="3.0" fill="#CCFBF1" opacity="0.20"/>
+
+<!-- Top-center subtle dots -->
+<circle cx="520" cy="215" r="5.0" fill="#D6A84F" opacity="0.10"/>
+<circle cx="680" cy="235" r="4.0" fill="#CCFBF1" opacity="0.13"/>
+<circle cx="554" cy="278" r="3.0" fill="#0F766E" opacity="0.08"/>
+<circle cx="646" cy="305" r="3.0" fill="#D6A84F" opacity="0.09"/>
+
+<!-- Floating organic accent shapes -->
+<ellipse cx="145" cy="625" rx="66" ry="27"
+         fill="#CCFBF1" opacity="0.11"
+         transform="rotate(-23 145 625)"/>
+<ellipse cx="1055" cy="625" rx="66" ry="27"
+         fill="#CCFBF1" opacity="0.11"
+         transform="rotate(23 1055 625)"/>
+<ellipse cx="478" cy="830" rx="52" ry="20"
+         fill="#D6A84F" opacity="0.06"
+         transform="rotate(8 478 830)"/>
+<ellipse cx="722" cy="830" rx="52" ry="20"
+         fill="#D6A84F" opacity="0.06"
+         transform="rotate(-8 722 830)"/>
+
+<!-- ████████████████████████████████████████████
+     LAYER 4: MALE FIGURE — LEFT
+     Seated, centered at x=268, phone held at y≈615
+     ████████████████████████████████████████████ -->
+
+<!-- Ground halo (shadow pool) -->
+<ellipse cx="268" cy="754" rx="90" ry="21" fill="url(#seatShadow)"/>
+
+<!-- Cushion / seated surface -->
+<ellipse cx="268" cy="740" rx="78" ry="17" fill="url(#cushionGrad)" opacity="0.55"/>
+<ellipse cx="268" cy="738" rx="72" ry="13" fill="url(#cushionGrad)" opacity="0.30"/>
+
+<!-- ─── Lower body / seated legs ─── -->
+<path d="
+  M182,708
+  Q176,693 185,678
+  Q202,663 236,655
+  Q251,651 268,650
+  Q285,651 300,655
+  Q334,663 351,678
+  Q360,693 354,708
+  Q330,730 268,736
+  Q206,730 182,708 Z
+" fill="url(#mSeatGrad)"/>
+
+<!-- ─── Torso ─── -->
+<path d="
+  M191,608
+  Q186,571 197,552
+  Q212,532 234,524
+  Q250,519 268,518
+  Q286,519 302,524
+  Q324,532 339,552
+  Q350,571 345,608
+  L335,662
+  Q308,672 268,674
+  Q228,672 201,662 Z
+" fill="url(#mBodyGrad)" filter="url(#figShadow)"/>
+
+<!-- Collar line — subtle shirt neckline -->
+<path d="M250,522 Q268,533 286,522"
+      fill="none" stroke="#FFFBF2" stroke-width="2.2"
+      stroke-linecap="round" opacity="0.22"/>
+
+<!-- ─── Left arm ─── -->
+<path d="
+  M193,610
+  Q175,622 168,648
+  Q164,665 170,681
+  L192,675
+  Q188,661 192,648
+  Q199,624 205,610 Z
+" fill="url(#skinGrad)"/>
+<!-- Left hand cup -->
+<ellipse cx="183" cy="682" rx="14" ry="10"
+         fill="url(#skinGrad)" transform="rotate(-9 183 682)"/>
+
+<!-- ─── Right arm ─── -->
+<path d="
+  M343,610
+  Q361,622 368,648
+  Q372,665 366,681
+  L344,675
+  Q348,661 344,648
+  Q337,624 331,610 Z
+" fill="url(#skinGrad)"/>
+<!-- Right hand cup -->
+<ellipse cx="353" cy="682" rx="14" ry="10"
+         fill="url(#skinGrad)" transform="rotate(9 353 682)"/>
+
+<!-- ─── Phone — male ─── -->
+<!-- Soft aura emanating from screen -->
+<ellipse cx="268" cy="628" rx="56" ry="50"
+         fill="url(#phoneAura)" filter="url(#fGlow)" opacity="0.9"/>
+<!-- Phone chassis -->
+<rect x="236" y="600" width="64" height="106" rx="10"
+      fill="url(#phoneBody)" filter="url(#figShadow)"/>
+<!-- Screen glass -->
+<rect x="242" y="607" width="52" height="88" rx="7"
+      fill="url(#screenGrad)"/>
+<!-- Screen bloom overlay -->
+<rect x="242" y="607" width="52" height="88" rx="7"
+      fill="url(#screenGlow)" filter="url(#screenBloom)"/>
+<!-- Abstract UI elements: chat-bubble silhouettes, no text -->
+<rect x="248" y="624" width="30" height="7" rx="3.5"
+      fill="#0F766E" opacity="0.28"/>
+<rect x="256" y="638" width="24" height="7" rx="3.5"
+      fill="#D6A84F" opacity="0.24"/>
+<rect x="248" y="652" width="28" height="7" rx="3.5"
+      fill="#0F766E" opacity="0.22"/>
+<rect x="252" y="666" width="20" height="7" rx="3.5"
+      fill="#64748B" opacity="0.16"/>
+<!-- Home bar -->
+<rect x="259" y="700" width="18" height="3" rx="1.5"
+      fill="#FFFBF2" opacity="0.32"/>
+
+<!-- ─── Neck ─── -->
+<rect x="254" y="474" width="28" height="32" rx="11"
+      fill="url(#skinGrad)"/>
+
+<!-- ─── Head ─── -->
+<ellipse cx="268" cy="448" rx="48" ry="52"
+         fill="url(#skinGrad)" filter="url(#figShadow)"/>
+<!-- Ear left -->
+<ellipse cx="220" cy="457" rx="8" ry="11"
+         fill="url(#skinGrad)" opacity="0.88"/>
+<!-- Ear right -->
+<ellipse cx="316" cy="457" rx="8" ry="11"
+         fill="url(#skinGrad)" opacity="0.88"/>
+<!-- Hair — dark crown, organic shape, no detail -->
+<path d="
+  M220,447
+  Q228,404 268,398
+  Q308,404 316,447
+  Q302,432 268,430
+  Q234,432 220,447 Z
+" fill="#1A0F08"/>
+<!-- Side hair wisp -->
+<path d="M220,447 Q218,460 222,470 Q220,462 220,447 Z"
+      fill="#1A0F08" opacity="0.6"/>
+<path d="M316,447 Q318,460 314,470 Q320,462 316,447 Z"
+      fill="#1A0F08" opacity="0.6"/>
+
+<!-- ████████████████████████████████████████████
+     LAYER 5: FEMALE FIGURE — RIGHT
+     Seated with elegant hijab, centered at x=932
+     ████████████████████████████████████████████ -->
+
+<!-- Ground halo -->
+<ellipse cx="932" cy="754" rx="90" ry="21" fill="url(#seatShadow)"/>
+
+<!-- Cushion -->
+<ellipse cx="932" cy="740" rx="78" ry="17"
+         fill="url(#cushionGrad)" opacity="0.55"/>
+<ellipse cx="932" cy="738" rx="72" ry="13"
+         fill="url(#cushionGrad)" opacity="0.30"/>
+
+<!-- ─── Lower body / seated legs ─── -->
+<path d="
+  M852,708
+  Q846,693 855,678
+  Q872,663 906,655
+  Q921,651 932,650
+  Q943,651 958,655
+  Q992,663 1009,678
+  Q1018,693 1012,708
+  Q988,730 932,736
+  Q876,730 852,708 Z
+" fill="#074E49"/>
+
+<!-- ─── Body (abaya, extends up into hijab) ─── -->
+<path d="
+  M852,602
+  Q847,565 860,546
+  Q876,528 900,520
+  Q916,515 932,514
+  Q948,515 964,520
+  Q988,528 1004,546
+  Q1017,565 1012,602
+  L1002,662
+  Q976,672 932,674
+  Q888,672 862,662 Z
+" fill="url(#fBodyGrad)" filter="url(#figShadow)"/>
+
+<!-- ─── Hijab — main organic outer shape ─── -->
+<!-- The hijab drapes from crown across shoulders, creating the distinctive silhouette -->
+<path d="
+  M851,526
+  Q843,492 856,460
+  Q871,426 893,410
+  Q910,398 932,394
+  Q954,398 971,410
+  Q993,426 1008,460
+  Q1021,492 1013,526
+  Q999,558 982,571
+  Q957,585 932,588
+  Q907,585 882,571
+  Q865,558 851,526 Z
+" fill="url(#hijabGrad)" filter="url(#figShadow)"/>
+
+<!-- Hijab highlight on crown (light catching top) -->
+<path d="
+  M889,422
+  Q905,405 932,401
+  Q959,405 975,422
+  Q958,415 932,413
+  Q906,415 889,422 Z
+" fill="#1C9E95" opacity="0.35"/>
+
+<!-- Hijab forehead fold / brow frame -->
+<path d="
+  M878,486
+  Q886,463 932,459
+  Q978,463 986,486
+  Q972,474 932,472
+  Q892,474 878,486 Z
+" fill="#085E59" opacity="0.45"/>
+
+<!-- Hijab front drape fold (under chin, framing face) -->
+<path d="
+  M876,532
+  Q884,560 932,565
+  Q980,560 988,532
+  Q975,550 932,554
+  Q889,550 876,532 Z
+" fill="#0A5652" opacity="0.50"/>
+
+<!-- Hijab left shoulder fall -->
+<path d="
+  M853,530
+  Q846,560 851,602
+  Q862,578 874,565
+  Q866,551 853,530 Z
+" fill="url(#hijabInner)" opacity="0.60"/>
+
+<!-- Hijab right shoulder fall -->
+<path d="
+  M1011,530
+  Q1018,560 1013,602
+  Q1002,578 990,565
+  Q998,551 1011,530 Z
+" fill="url(#hijabInner)" opacity="0.60"/>
+
+<!-- ─── Face (visible in hijab opening) ─── -->
+<ellipse cx="932" cy="456" rx="44" ry="48"
+         fill="url(#skinLight)" filter="url(#figShadow)"/>
+<!-- Ear left (partially visible at hijab edge) -->
+<ellipse cx="888" cy="462" rx="7" ry="10"
+         fill="url(#skinGrad)" opacity="0.70"/>
+
+<!-- ─── Left arm ─── -->
+<path d="
+  M855,607
+  Q837,620 830,645
+  Q826,662 832,678
+  L854,672
+  Q850,658 854,645
+  Q861,621 867,607 Z
+" fill="url(#skinGrad)"/>
+<ellipse cx="843" cy="679" rx="14" ry="10"
+         fill="url(#skinGrad)" transform="rotate(-9 843 679)"/>
+
+<!-- ─── Right arm ─── -->
+<path d="
+  M1009,607
+  Q1027,620 1034,645
+  Q1038,662 1032,678
+  L1010,672
+  Q1014,658 1010,645
+  Q1003,621 997,607 Z
+" fill="url(#skinGrad)"/>
+<ellipse cx="1021" cy="679" rx="14" ry="10"
+         fill="url(#skinGrad)" transform="rotate(9 1021 679)"/>
+
+<!-- ─── Phone — female ─── -->
+<!-- Soft aura -->
+<ellipse cx="932" cy="628" rx="56" ry="50"
+         fill="url(#phoneAura)" filter="url(#fGlow)" opacity="0.9"/>
+<!-- Chassis -->
+<rect x="900" y="600" width="64" height="106" rx="10"
+      fill="url(#phoneBody)" filter="url(#figShadow)"/>
+<!-- Screen glass -->
+<rect x="906" y="607" width="52" height="88" rx="7"
+      fill="url(#screenGrad)"/>
+<rect x="906" y="607" width="52" height="88" rx="7"
+      fill="url(#screenGlow)" filter="url(#screenBloom)"/>
+<!-- UI silhouette elements (no text) -->
+<rect x="912" y="624" width="26" height="7" rx="3.5"
+      fill="#0F766E" opacity="0.26"/>
+<rect x="919" y="638" width="32" height="7" rx="3.5"
+      fill="#D6A84F" opacity="0.23"/>
+<rect x="912" y="652" width="30" height="7" rx="3.5"
+      fill="#0F766E" opacity="0.20"/>
+<rect x="916" y="666" width="22" height="7" rx="3.5"
+      fill="#64748B" opacity="0.15"/>
+<!-- Home bar -->
+<rect x="923" y="700" width="18" height="3" rx="1.5"
+      fill="#FFFBF2" opacity="0.32"/>
+
+<!-- ████████████████████████████████████████████
+     LAYER 6: FINISHING OVERLAYS
+     ████████████████████████████████████████████ -->
+
+<!-- Subtle top header gradient fade for breathing room -->
+<linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%"   stop-color="#FFFBF2" stop-opacity="0.14"/>
+  <stop offset="100%" stop-color="#FFFBF2" stop-opacity="0"/>
+</linearGradient>
+<rect width="1200" height="160" fill="url(#topFade)"/>
+
+<!-- Edge vignette -->
+<rect width="1200" height="900" fill="url(#vignette)"/>
+
+<!-- Paper grain overlay (very subtle, warmth layer) -->
+<rect width="1200" height="900" fill="url(#bgGrad)"
+      opacity="0.035" filter="url(#fGrain)"/>
+
+</svg>
+
+</div>
+</body>
+</html>
